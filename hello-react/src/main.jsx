@@ -9,9 +9,23 @@ import "@fontsource/roboto/700.css";
 
 import { CssBaseline } from "@mui/material";
 
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+
+import Edit from "./Edit.jsx";
+const router = createBrowserRouter([
+	{
+		path: "/",
+		element: <App />
+	},
+
+	{
+		path: "/edit",
+		element: <Edit />
+	},
+])
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
         <CssBaseline />
-		<App />
+		<RouterProvider router={router} />
 	</React.StrictMode>
 );
