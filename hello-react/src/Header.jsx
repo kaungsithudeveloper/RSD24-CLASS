@@ -4,7 +4,7 @@ import {
 	ClearAll as ClearAllIcon,
 } from "@mui/icons-material";
 
-export default function Header({ count }) {
+export default function Header({ count, clear }) {
 	return (
 		<AppBar position="static">
 			<Toolbar>
@@ -16,9 +16,9 @@ export default function Header({ count }) {
 					sx={{ ml: 3, flexGrow: 1 }}>
 					Checklist
 				</Typography>
-				<IconButton>
-					{" "}
-					<ClearAllIcon />{" "}
+				<IconButton onClick={clear}>
+					
+					<ClearAllIcon />
 				</IconButton>
 			</Toolbar>
 		</AppBar>

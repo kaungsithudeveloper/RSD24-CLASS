@@ -35,9 +35,15 @@ export default function App() {
         )
     }
 
+    const clear = () => {
+        setList(list.filter(item => !item.done));
+    }
+
     return (
 		<div role="main">
-			<Header count={list.filter(item => !item.done).length} />
+			<Header 
+                clear={clear}
+            count={list.filter(item => !item.done).length} />
 			<Container maxWidth="sm" sx={{ mt: 4 }}>
 				<AddForm add={add} />
 				<CheckList 
