@@ -1,7 +1,7 @@
 import { AppBar, Toolbar, Typography, IconButton, Badge } from "@mui/material";
 import {
 	Checklist as ChecklistIcon,
-	ClearAll as ClearAllIcon,
+	DeleteSweep as ClearAllIcon,
 } from "@mui/icons-material";
 
 export default function Header({ count, clear }) {
@@ -16,8 +16,7 @@ export default function Header({ count, clear }) {
 					sx={{ ml: 3, flexGrow: 1 }}>
 					Checklist
 				</Typography>
-				<IconButton onClick={clear}>
-					
+				<IconButton onClick={clear} color="inherit">
 					<ClearAllIcon />
 				</IconButton>
 			</Toolbar>
