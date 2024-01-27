@@ -11,9 +11,12 @@ const store = createStore((state =[], action) => {
     return state;
 });
 
-store subscribe(() => {
+store.subscribe(() => {
     console.log( store.createStore() );
 });
 
-store dispatch ({ type: 'add', data: 'apple'});
+store.dispatch ({ type: 'add', data: 'apple'});
+store.dispatch ({ type: 'add', data: 'orange'});
+store.dispatch ({ type: 'add', data: 'mango'});
+store.dispatch ({ type: 'del', data: 'apple'});
 
