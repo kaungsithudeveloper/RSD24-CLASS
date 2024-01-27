@@ -1,20 +1,19 @@
 import { useState } from "react";
 import AddForm from "./AddForm";
 import CheckList from "./CheckList";
+import { useSelector } from "react-redux";
 
-export default function App({ list, add, toggle, remove }) {
+export default function App() {
+	const list = useSelector(state => state.todo.items);
     return (
 		<div role="main">
-			<AddForm add={add} />
+			<AddForm />
 			<CheckList
 				list={list.filter(item => !item.done)}
-				toggle={toggle}
-				remove={remove}
+				
 			/>
 			<CheckList
 				list={list.filter(item => item.done)}
-				toggle={toggle}
-				remove={remove}
 				done={true}
 			/>
 		</div>

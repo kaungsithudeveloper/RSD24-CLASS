@@ -9,14 +9,17 @@ import {
 import { useContext } from "react";
 
 import { ThemeContext } from "./Theme";
+import { useSelector } from "react-redux";
 
 export default function Header({ count, clear }) {
+
+	const list = useSelector (state => state.todo.items);
 
 	const {mode , setMode} = useContext(ThemeContext);
 	return (
 		<AppBar position="static">
 			<Toolbar>
-				<Badge badgeContent={count} color="error">
+				<Badge badgeContent={list.filter(item => !item.done).length} color="error">
 					<ChecklistIcon />
 				</Badge>
 				<Typography
@@ -39,7 +42,7 @@ export default function Header({ count, clear }) {
 						</IconButton>
 					)}
 
-					<IconButton onClick={clear} color="inherit">
+					<IconButton onClick={() => {}} color="inherit">
 						<ClearAllIcon />
 					</IconButton>
 				</>

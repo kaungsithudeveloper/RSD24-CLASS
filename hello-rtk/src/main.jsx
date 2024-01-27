@@ -10,8 +10,14 @@ import { CssBaseline } from "@mui/material";
 import AppRouter from "./AppRouter.jsx";
 import Theme from "./Theme.jsx";
 
+import {Provider} from "react-redux"
+import {store} from "./app/store";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
 	<React.StrictMode>
-        <Theme />
+		<Provider store={store}>
+			<Theme />
+		</Provider>
+        
 	</React.StrictMode>
 );

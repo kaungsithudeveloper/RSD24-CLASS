@@ -2,15 +2,20 @@ import { useRef } from "react";
 
 import { Input, IconButton, } from "@mui/material";
 import { Add as AddIcon } from "@mui/icons-material";
+import { useDispatch } from "react-redux";
+import {add} from "./app/todoSlice";
 
-export default function AddForm({ add }) {
+export default function AddForm() {
 	const inputRef = useRef();
+	const dispatch = useDispatch();
+
 	return (
 		<form
 			onSubmit={e => {
 				e.preventDefault();
 				const subject = inputRef.current.value;
-				add(subject);
+				dispatch( add(subject) );
+				// dispatch ({ type:add, payload: subject});
 
 				inputRef.current.value = "";
 				inputRef.current.focus();

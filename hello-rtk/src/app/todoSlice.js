@@ -6,15 +6,21 @@ export const asyncMethod = createAsyncThunk("action/id", async () => {
   // will become action payload
 });
 
-export const mySlice = createSlice({
-  name: "name",
+export const todoSlice = createSlice({
+  name: "todo",
   initialState: {
-    status: "idle",
-    // other states
+     item: [
+        {_id: 1, subject: "Apple", done: false },
+        {_id: 2, subject: "Mango", done: true },
+        {_id: 3, subject: "Orange", done: false },
+     ]
   },
   reducers: {
-    method: (state, action) => {
-      // mutate state here
+    add: (state, action) => {
+      const _id = state.items[state.items.length - 1]._id + 1;
+      state.items.push(
+        {_id, subject: action.payload, done: false },
+      )
     },
     // other action methods
   },
@@ -34,8 +40,8 @@ export const mySlice = createSlice({
   },
 });
 
-export const { method } = mySlice.actions;
-export default mySlice.reducer;
+export const { add } = todoSlice.actions;
+export default todoSlice.reducer;
 
 /*** store.js ***/
 // import { configureStore } from "@reduxjs/toolkit";

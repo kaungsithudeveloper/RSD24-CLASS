@@ -15,7 +15,7 @@ import {
 
 import { Link } from "react-router-dom";
 
-export default function CheckList({ list, remove, toggle, done }) {
+export default function CheckList({ list , done}) {
 	return (
 		<List sx={{ opacity: done ? 0.5 : 1 }}>
 			{list.map(item => {
@@ -31,7 +31,7 @@ export default function CheckList({ list, remove, toggle, done }) {
 								</IconButton>
 								<IconButton
 									onClick={() => {
-										remove(item._id);
+										
 									}}>
 									<DeleteIcon color="error" />
 								</IconButton>
@@ -40,7 +40,7 @@ export default function CheckList({ list, remove, toggle, done }) {
 						<ListItemIcon>
 							<IconButton
 								onClick={() => {
-									toggle(item._id);
+									
 								}}>
 								{done ? (
 									<DoneIcon color="success" />
