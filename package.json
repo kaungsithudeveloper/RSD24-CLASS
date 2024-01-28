@@ -1,12 +1,12 @@
 {
   "dependencies": {
+    "mongodb": "^6.3.0",
     "react-router-dom": "^6.21.3"
   },
   "name": "rsd24-class",
   "description": "Weekly source code update for Rockstar Developer Course - 2024 (January).",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -9,13 +9,17 @@ import {
 import { useContext } from "react";
 
 import { ThemeContext } from "./Theme";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { clear } from "./app/todoSlice";
 
-export default function Header({ count, clear }) {
+export default function Header({ count }) {
 
 	const list = useSelector (state => state.todo.items);
 
 	const {mode , setMode} = useContext(ThemeContext);
+
+	const dispatch = useDispatch();
+
 	return (
 		<AppBar position="static">
 			<Toolbar>
@@ -42,7 +46,9 @@ export default function Header({ count, clear }) {
 						</IconButton>
 					)}
 
-					<IconButton onClick={() => {}} color="inherit">
+					<IconButton onClick={() => {
+						dispatch( clear() );
+					}} color="inherit">
 						<ClearAllIcon />
 					</IconButton>
 				</>

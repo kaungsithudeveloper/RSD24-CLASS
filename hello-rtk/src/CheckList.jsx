@@ -14,8 +14,13 @@ import {
 } from "@mui/icons-material";
 
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { remove, toggle } from "./app/todoSlice";
 
 export default function CheckList({ list , done}) {
+
+	const dispatch = useDispatch();
+
 	return (
 		<List sx={{ opacity: done ? 0.5 : 1 }}>
 			{list.map(item => {
@@ -31,7 +36,7 @@ export default function CheckList({ list , done}) {
 								</IconButton>
 								<IconButton
 									onClick={() => {
-										
+										dispatch( remove(item._id) );
 									}}>
 									<DeleteIcon color="error" />
 								</IconButton>
@@ -40,7 +45,7 @@ export default function CheckList({ list , done}) {
 						<ListItemIcon>
 							<IconButton
 								onClick={() => {
-									
+									//dispatch( toggle(item._id) );
 								}}>
 								{done ? (
 									<DoneIcon color="success" />

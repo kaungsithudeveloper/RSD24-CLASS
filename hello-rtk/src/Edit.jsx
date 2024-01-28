@@ -12,11 +12,16 @@ import {
     useNavigate,
 } from "react-router-dom";
 
-export default function Edit({ update }) {
+import { useDispatch } from "react-redux";
+import { update } from "./app/todoSlice";
+
+export default function Edit() {
 	const { state } = useLocation();
 	const navigate = useNavigate();
     
 	// if(!state) return navigate("/");
+
+	const dispatch = useDispatch();
 
 	const [subject, setSubject] = useState(state.item.subject);
 
@@ -25,7 +30,7 @@ export default function Edit({ update }) {
 			<form
 				onSubmit={e => {
 					e.preventDefault();
-					update(state.item._id, subject);
+					dispatch( update(state.item._id, subject) );
 					navigate("/");
 				}}>
 				<Input
