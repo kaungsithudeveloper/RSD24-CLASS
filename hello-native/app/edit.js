@@ -1,11 +1,14 @@
-import { View, Text, StyleSheet } from "react-native";
-import { Link } from "expo-router";
+import { View, Text, StyleSheet ,TextInput, Button,} from "react-native";
+import { router } from "expo-router";
 
 
 export default function Edit() {
 	return (
 		<View>
 			<Text>Edit Page</Text>
+            <Button title="Save" onPress={() => {
+                router.replace("/");
+            }}/>
 		</View>
 	);
 }
