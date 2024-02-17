@@ -41,4 +41,11 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
   },
+  pickerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingHorizontal: 50,
+    paddingVertical: 20,
+  },
 });
