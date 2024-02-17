@@ -1,22 +1,23 @@
+import { useContext } from "react";
+import { ThemeContext } from "./Theme";
+
 import { AppBar, Toolbar, Typography, IconButton, Badge } from "@mui/material";
 import {
-	LightMode as LightModeIcon,
-	DarkMode as DarkModeIcon,
+    LightMode as LightModeIcon,
+    DarkMode as DarkModeIcon,
 	Checklist as ChecklistIcon,
 	DeleteSweep as ClearAllIcon,
 } from "@mui/icons-material";
 
-import { useContext } from "react";
-
-import { ThemeContext } from "./Theme";
-
 export default function Header({ count, clear }) {
+    const { mode, setMode } = useContext(ThemeContext);
 
-	const {mode , setMode} = useContext(ThemeContext);
 	return (
 		<AppBar position="static">
 			<Toolbar>
-				<Badge badgeContent={count} color="error">
+				<Badge
+					badgeContent={count}
+					color="error">
 					<ChecklistIcon />
 				</Badge>
 				<Typography
@@ -26,24 +27,29 @@ export default function Header({ count, clear }) {
 				</Typography>
 				<>
 					{mode === "dark" ? (
-						<IconButton color="inherit" onClick={() => {
-							setMode("light");
-						}}>
+						<IconButton
+							color="inherit"
+							onClick={() => {
+								setMode("light");
+							}}>
 							<LightModeIcon />
 						</IconButton>
-					):(
-						<IconButton color="inherit" onClick={() => {
-							setMode("dark");
-						}}>
+					) : (
+						<IconButton
+							color="inherit"
+							onClick={() => {
+								setMode("dark");
+							}}>
 							<DarkModeIcon />
 						</IconButton>
 					)}
-
-					<IconButton onClick={clear} color="inherit">
+                    
+					<IconButton
+						onClick={clear}
+						color="inherit">
 						<ClearAllIcon />
 					</IconButton>
 				</>
-				
 			</Toolbar>
 		</AppBar>
 	);

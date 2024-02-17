@@ -1,22 +1,20 @@
-const {createStore} = require("redux");
+const { createStore } = require("redux");
 
-const store = createStore((state =[], action) => {
+const store = createStore((state = [], action) => {
     if(action.type == "add") {
         return [...state, action.data];
     }
-    if (action.type == "del") {
+    if(action.type == "del") {
         return state.filter(item => item !== action.data);
     }
-
     return state;
 });
 
 store.subscribe(() => {
-    console.log( store.createStore() );
+    console.log( store.getState() );
 });
 
-store.dispatch ({ type: 'add', data: 'apple'});
-store.dispatch ({ type: 'add', data: 'orange'});
-store.dispatch ({ type: 'add', data: 'mango'});
-store.dispatch ({ type: 'del', data: 'apple'});
-
+store.dispatch({ type: 'add', data: 'Apple' });
+store.dispatch({ type: 'add', data: 'Orange' });
+store.dispatch({ type: 'add', data: 'Mango' });
+store.dispatch({ type: 'del', data: 'Apple' });

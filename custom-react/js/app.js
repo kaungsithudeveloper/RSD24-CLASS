@@ -15,7 +15,7 @@
   \********************/
 /***/ (() => {
 
-eval("function App() {\n  return /*#__PURE__*/React.createElement(\"p\", {\n    title: \"Title\"\n  }, \"Upadte\");\n}\nReactDOM.render( /*#__PURE__*/React.createElement(App, null), document.querySelector(\"#app\"));\n\n//# sourceURL=webpack://custom-react/./src/app.js?");
+eval("function App() {\n  return /*#__PURE__*/React.createElement(\"p\", {\n    title: \"Title\"\n  }, \"Update React 789\");\n}\nReactDOM.render( /*#__PURE__*/React.createElement(App, null), document.querySelector(\"#app\"));\n\n//# sourceURL=webpack://custom-react/./src/app.js?");
 
 /***/ })
 

@@ -1,6 +1,6 @@
-function App(){
-    return<p title="Title">
-        Upadte ahddjjd
+function App() {
+    return <p title="Title">
+        Update React 7898392048
     </p>;
 }
 

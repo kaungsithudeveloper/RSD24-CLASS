@@ -1,4 +1,3 @@
-import { useState } from "react";
 import App from "./App.jsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -7,23 +6,14 @@ import Edit from "./Edit.jsx";
 import Template from "./Template.jsx";
 
 export default function AppRouter() {
-	
 	const router = createBrowserRouter([
 		{
 			path: "/",
-			element: (
-				<Template
-					
-				/>
-			),
+			element: <Template />,
 			children: [
 				{
 					path: "/",
-					element: (
-						<App
-							
-						/>
-					),
+					element: <App />,
 				},
 				{
 					path: "/edit",
