@@ -1,7 +1,7 @@
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
-import { deepPurple, purple } from "@mui/material/colors";
+import { purple } from "@mui/material/colors";
 
 import { useState, useMemo, createContext, useContext } from "react";
 
@@ -21,11 +21,11 @@ export default function AppThemeProvider({ children }) {
 				...(mode === "light"
 					? {
 							header: { background: purple[400] },
-							banner:{ background: "#ccc"},
+                            banner: { background: "#e1e1e1" }
 					  }
 					: {
 							header: { background: purple[900] },
-							banner:{ background: "#222"},
+                            banner: { background: "#222" }
 					  }),
 			},
 		});
