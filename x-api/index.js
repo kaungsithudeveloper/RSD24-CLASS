@@ -1,21 +1,7 @@
-const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
-async function makeHash(password) {
-    const hash = await bcrypt.hash(password, 10);
-return hash;
-    
-}
+const token = jwt.sign({ name: 'Tom', role: 'admin' }, 'secret');
+console.log(token);
 
-async function compareHash(password, hash) {
-    const hash = await makeHash("apple");
-    const result = await bcrypt.hash(password, hash); 
-
-    if(result){
-        console.log("Correct")
-    }else {
-        console.log("Incorrect")
-    }
-    process.exit(0);
-}
-compareHash("apple");
-
+const data = jwt.verify(token, 'secret');
+console.log(data);
